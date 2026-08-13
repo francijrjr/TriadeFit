@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded',()=>{
 
   const art=document.querySelector('.hero-art');
   const object=document.querySelector('#nfObject');
-  art?.addEventListener('pointermove',event=>{if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;const rect=art.getBoundingClientRect();const x=(event.clientX-rect.left)/rect.width-.5;const y=(event.clientY-rect.top)/rect.height-.5;object.style.transform=`rotateX(${-9-y*14}deg) rotateY(${-13+x*22}deg) rotateZ(-5deg)`});
-  art?.addEventListener('pointerleave',()=>object.style.transform='rotateX(-9deg) rotateY(-13deg) rotateZ(-5deg)');
+  art?.addEventListener('pointermove',event=>{if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;const rect=art.getBoundingClientRect();const x=(event.clientX-rect.left)/rect.width-.5;const y=(event.clientY-rect.top)/rect.height-.5;object.style.transform=`rotateX(${-4-y*8}deg) rotateY(${-6+x*12}deg) rotateZ(-2deg)`});
+  art?.addEventListener('pointerleave',()=>object.style.transform='rotateX(-4deg) rotateY(-6deg) rotateZ(-2deg)');
 
   const phone=document.querySelector('input[name="telefone"]');
   phone?.addEventListener('input',()=>{let value=phone.value.replace(/\D/g,'').slice(0,11);if(value.length>6)value=`(${value.slice(0,2)}) ${value.slice(2,7)}-${value.slice(7)}`;else if(value.length>2)value=`(${value.slice(0,2)}) ${value.slice(2)}`;else if(value.length)value=`(${value}`;phone.value=value});
