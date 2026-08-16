@@ -2160,6 +2160,38 @@ footer p.tag {
   }
   .modality {
     min-height: 440px;
+    padding: 24px;
+  }
+  .modality-head {
+    margin-top: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .modality-head svg {
+    flex: 0 0 50px;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    overflow: visible;
+    color: #fff;
+    border-color: rgba(255, 77, 77, 0.62);
+    background: rgba(226, 28, 43, 0.18);
+  }
+  .modality h3 {
+    max-width: 100%;
+    margin-top: 0;
+    font-size: clamp(29px, 9.2vw, 36px);
+    line-height: 0.92;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+  }
+  .modality p {
+    margin-top: 12px;
+  }
+  .modality svg.arrow {
+    top: 24px;
+    right: 24px;
   }
   .contact-stats {
     gap: 24px;
