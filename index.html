@@ -1,158 +1,342 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="NutriFitness CT — musculação, acompanhamento e evolução em um centro de treinamento feito para pessoas reais." />
-    <meta name="theme-color" content="#0b0b0b" />
-    <title>NutriFitness CT — Treino de verdade</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="header">
-      <a class="logo" href="#inicio" aria-label="NutriFitness CT — início">
-        <span class="logo-icon">NF</span>
-        <span class="logo-type">NUTRI<strong>FITNESS</strong><small>CENTRO DE TREINAMENTO</small></span>
-      </a>
-      <nav aria-label="Navegação principal">
-        <a href="#estrutura">Estrutura</a>
-        <a href="#metodo">Nosso método</a>
-        <a href="#modalidades">Modalidades</a>
-      </nav>
-      <a class="header-cta" href="#contato">Agendar aula <i data-lucide="arrow-up-right"></i></a>
-      <button class="menu" type="button" aria-label="Abrir menu" aria-expanded="false"><i data-lucide="menu"></i></button>
-    </header>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="NutriFitness CT — musculação, acompanhamento e evolução em um centro de treinamento feito para pessoas reais." />
+<meta name="theme-color" content="#0a0a0a" />
+<title>NutriFitness CT — Treino de verdade</title>
+<link rel="icon" type="image/png" href="assets/favicon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preload" as="image" href="assets/nutrifitness-deadlift-woman.png" />
+<link rel="preload" as="image" href="assets/nutrifitness-functional-ropes.png" />
+<link rel="preload" as="image" href="assets/nutrifitness-coaching.png" />
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;0,900;1,800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-    <main>
-      <section class="hero" id="inicio">
-        <div class="hero-copy reveal">
-          <div class="kicker"><i></i> O seu centro de treinamento</div>
-          <h1>TREINO DE<br /><em>VERDADE.</em></h1>
-          <p class="hero-lead">Um espaço para quem quer evoluir com orientação, constância e um treino que respeita o seu ritmo.</p>
+<link rel="stylesheet" href="styles.css?v=10" />
+</head>
+<body>
+
+  <div class="intro-bumper" id="introBumper">
+    <div class="bumper-glow"></div>
+    <div class="bumper-sweep"></div>
+    <div class="bumper-shards" id="bumperShards"></div>
+    <div class="bumper-logo-wrap">
+      <img class="bumper-logo" src="assets/logo-full-transparent.png" alt="NutriFitness Training Center" />
+      <p class="bumper-word">NUTRI<b>FITNESS</b> · CENTRO DE TREINAMENTO</p>
+    </div>
+  </div>
+
+  <div class="letterbox top" id="lbTop"></div>
+  <div class="letterbox bottom" id="lbBottom"></div>
+
+  <header>
+    <a class="logo" href="#inicio" aria-label="NutriFitness CT — início">
+      <span class="logo-mark"><img src="assets/logo-icon-transparent.png" alt="" /></span>
+      <span class="logo-text">NUTRIFITNESS<small>CENTRO DE TREINAMENTO</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Navegação principal">
+      <a href="#campanha">Campanha</a>
+      <a href="#estrutura">Estrutura</a>
+      <a href="#metodo">Método</a>
+      <a href="#modalidades">Modalidades</a>
+    </nav>
+    <a class="btn primary header-cta" href="#contato">Agendar aula
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
+    </a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" id="menuToggle">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </header>
+
+  <main>
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="inicio">
+      <div class="hero-grid-lines"></div>
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow reveal" id="heroKicker"><i></i> O seu centro de treinamento</p>
+          <h1><span class="line" id="heroLine1">TREINO DE</span><br /><span class="line" id="heroLine2"><em>VERDADE.</em></span></h1>
+          <p class="hero-lead reveal" id="heroLead">Um espaço para quem quer evoluir com orientação, constância e um treino que respeita o seu ritmo — sem promessas vazias.</p>
           <div class="hero-actions">
-            <a class="button primary" href="#contato">Comece agora <i data-lucide="arrow-right"></i></a>
-            <a class="plain-link" href="#estrutura">Conheça o CT <i data-lucide="chevron-down"></i></a>
+            <a class="btn primary reveal" id="heroCta1" href="#contato">Comece agora
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="plain reveal" id="heroCta2" href="#estrutura">Conheça o CT
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
           </div>
-          <div class="hero-trust">
-            <span><i data-lucide="badge-check"></i> Treino acompanhado</span>
-            <span><i data-lucide="heart-pulse"></i> Para todos os níveis</span>
+          <div class="hero-trust reveal" id="heroTrust">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 3 7v6c0 5 4 8.5 9 9 5-.5 9-4 9-9V7l-9-5Z"/><path d="m9 12 2 2 4-4"/></svg> Treino acompanhado</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z"/><path d="M3.5 12h4l1.5-3 3 6 1.5-3h6.5"/></svg> Para todos os níveis</span>
           </div>
         </div>
 
-        <div class="hero-art reveal" aria-label="Símbolo tridimensional da NutriFitness CT">
-          <div class="red-sun"></div>
-          <div class="nf-object" id="nfObject">
-            <div class="nf-plate front"><span>NF</span><small>CT</small></div>
-            <div class="nf-plate back"><span>NF</span></div>
-            <div class="nf-edge edge-1"></div><div class="nf-edge edge-2"></div><div class="nf-edge edge-3"></div><div class="nf-edge edge-4"></div>
+        <div class="pulse-panel reveal" id="pulsePanel">
+          <div class="corner tl"></div><div class="corner br"></div>
+          <div class="pulse-head">
+            <div class="pulse-brand"><img src="assets/logo-icon-transparent.png" alt="" /></div>
+            <div><span>PAINEL DE EVOLUÇÃO</span><b>NUTRIFITNESS CT</b></div>
+            <small class="pulse-status"><i></i> CICLO ATIVO</small>
           </div>
-          <div class="orbit-line"></div>
-          <div class="art-label label-one"><b>01</b><span>FORÇA<br />COM PROPÓSITO</span></div>
-          <div class="art-label label-two"><b>02</b><span>EVOLUÇÃO<br />CONSISTENTE</span></div>
-        </div>
-
-        <div class="hero-bottom">
-          <p>NUTRIFITNESS <span>CT</span></p>
-          <div><i></i> ABERTO PARA NOVOS ALUNOS</div>
-        </div>
-      </section>
-
-      <section class="intro" id="estrutura">
-        <div class="intro-heading reveal">
-          <span class="section-number">01 / O CT</span>
-          <h2>UM LUGAR PARA<br />VOCÊ <em>CONTINUAR.</em></h2>
-        </div>
-        <div class="intro-copy reveal">
-          <p>Academia não precisa ser um ambiente intimidador. Na NutriFitness CT, você encontra estrutura, atenção e uma equipe presente para transformar esforço em progresso.</p>
-          <a href="#contato">Quero conhecer o espaço <i data-lucide="arrow-right"></i></a>
-        </div>
-      </section>
-
-      <section class="features" aria-label="Diferenciais da NutriFitness CT">
-        <article class="feature reveal">
-          <span>01</span>
-          <i data-lucide="dumbbell"></i>
-          <h3>ESTRUTURA<br />COMPLETA</h3>
-          <p>Equipamentos e ambiente preparados para treinos seguros e eficientes.</p>
-        </article>
-        <article class="feature red-feature reveal">
-          <span>02</span>
-          <i data-lucide="users"></i>
-          <h3>EQUIPE<br />PRESENTE</h3>
-          <p>Orientação próxima para você treinar melhor e seguir avançando.</p>
-        </article>
-        <article class="feature reveal">
-          <span>03</span>
-          <i data-lucide="trending-up"></i>
-          <h3>EVOLUÇÃO<br />REAL</h3>
-          <p>Metas possíveis, acompanhamento e constância sem fórmulas mágicas.</p>
-        </article>
-      </section>
-
-      <section class="method" id="metodo">
-        <div class="method-visual reveal">
-          <div class="method-poster">
-            <span>NF / 02</span>
-            <strong>VOCÊ<br />CONSEGUE<br /><em>MAIS.</em></strong>
-            <div class="poster-mark">+</div>
+          <div class="pulse-primary"><strong>04</strong><span>TREINOS<br />ESTA SEMANA</span></div>
+          <svg class="pulse-svg" viewBox="0 0 320 140" role="img" aria-label="Curva semanal de evolução dos treinos">
+            <defs>
+              <linearGradient id="pulseStroke" x1="0" x2="1">
+                <stop offset="0" stop-color="#7a0e18"/><stop offset=".5" stop-color="#ff4d4d"/><stop offset="1" stop-color="#e21c2b"/>
+              </linearGradient>
+              <linearGradient id="pulseArea" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#e21c2b" stop-opacity=".26"/><stop offset="1" stop-color="#e21c2b" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <line class="pulse-grid" x1="0" y1="35" x2="320" y2="35"/>
+            <line class="pulse-grid" x1="0" y1="70" x2="320" y2="70"/>
+            <line class="pulse-grid" x1="0" y1="105" x2="320" y2="105"/>
+            <path class="pulse-area" d="M0,112 C28,108 46,90 72,98 S108,42 140,62 S178,112 205,84 S245,34 272,54 S302,68 320,50 L320,140 L0,140 Z" />
+            <path id="pulsePath" class="pulse-line" d="M0,112 C28,108 46,90 72,98 S108,42 140,62 S178,112 205,84 S245,34 272,54 S302,68 320,50" pathLength="1" />
+            <circle class="pulse-node" cx="320" cy="50" r="5" />
+          </svg>
+          <div class="pulse-days" aria-hidden="true"><span>SEG</span><span>TER</span><span>QUA</span><span>QUI</span><span>SEX</span><span>SÁB</span><span>DOM</span></div>
+          <div class="pulse-metrics" aria-label="Resumo de desempenho">
+            <span><b>36</b><small>sessões concluídas</small></span>
+            <span><b>78%</b><small>intensidade média</small></span>
           </div>
-          <div class="method-badge"><i data-lucide="activity"></i><span>Movimento<br /><b>é saúde</b></span></div>
+          <p class="pulse-caption">RITMO CONSISTENTE<small>Seu progresso, semana após semana</small></p>
         </div>
-        <div class="method-copy reveal">
-          <span class="section-number">02 / NOSSO MÉTODO</span>
-          <h2>O TREINO<br />COMEÇA EM <em>VOCÊ.</em></h2>
-          <p>Seu objetivo, sua experiência e sua rotina orientam o caminho. A gente acompanha de perto para que o treino faça sentido e caiba na vida real.</p>
-          <ol>
-            <li><span>01</span><div><b>ENTENDEMOS SEU MOMENTO</b><small>Objetivos, rotina e nível de experiência.</small></div></li>
-            <li><span>02</span><div><b>ORIENTAMOS SEU TREINO</b><small>Execução segura e progressão consciente.</small></div></li>
-            <li><span>03</span><div><b>ACOMPANHAMOS A EVOLUÇÃO</b><small>Presença para ajustar e seguir avançando.</small></div></li>
-          </ol>
-        </div>
-      </section>
+      </div>
 
-      <section class="modalities" id="modalidades">
-        <div class="modalities-head reveal">
-          <span class="section-number">03 / MODALIDADES</span>
+      <div class="hero-bottom">
+        <p class="hero-mark">NUTRIFITNESS <b>CT</b></p>
+        <div class="status"><span class="dot"></span> ABERTO PARA NOVOS ALUNOS</div>
+      </div>
+    </section>
+
+    <!-- ===================== TICKER ===================== -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track" id="tickerTrack"></div>
+    </div>
+
+    <!-- ===================== CAMPAIGN FILM ===================== -->
+    <section class="film" id="campanha" aria-labelledby="campaign-title">
+      <div class="film-head">
+        <div>
+          <p class="eyebrow"><i></i> Você não precisa estar pronto.</p>
+          <h2 id="campaign-title">A CAMPANHA</h2>
+        </div>
+        <span class="section-num">2026 / NF CT</span>
+      </div>
+
+      <div class="film-stage" id="filmStage">
+        <div class="film-bar top" id="filmBarTop"></div>
+        <div class="film-bar bottom" id="filmBarBottom"></div>
+        <div class="film-wipe" id="filmWipe" aria-hidden="true"></div>
+        <div class="film-scan" id="filmScan" aria-hidden="true"></div>
+
+        <div class="film-scene" aria-hidden="true">
+          <img class="film-athlete" id="athleteScene" src="assets/nutrifitness-deadlift-woman.png" alt="" />
+          <img class="film-athlete secondary" id="athleteSceneSecondary" src="assets/nutrifitness-functional-ropes.png" alt="" />
+          <div class="film-light-streak"></div>
+          <div id="beam"></div>
+        </div>
+        <div class="film-scene-brand" id="filmSceneBrand">
+          <div class="film-burst" id="filmBurst"></div>
+          <div class="film-shards" id="filmShards"></div>
+          <img class="film-logo" id="filmLogo" src="assets/logo-full-transparent.png" alt="NutriFitness Training Center" />
+        </div>
+
+        <div class="film-vignette"></div>
+        <div class="film-grain"></div>
+
+        <div class="film-topline">
+          <span>NUTRIFITNESS <b>ORIGINAL</b></span>
+          <span>FORÇA / CONSTÂNCIA / RESULTADO</span>
+        </div>
+
+        <div class="film-copy">
+          <p class="film-kicker"><i></i> Você não precisa estar pronto.</p>
+          <h2><span><b>PRECISA</b></span><em><b>COMEÇAR.</b></em></h2>
+          <p class="film-lead">Treino de verdade para construir força, confiança e uma rotina que permanece.</p>
+          <div class="film-actions">
+            <a class="btn primary" href="#contato">Agendar aula experimental
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <span class="film-proof"><b>01</b>PRIMEIRO PASSO</span>
+          </div>
+        </div>
+
+        <div class="film-stamp"><img src="assets/logo-icon-transparent.png" alt="" /><span><b>NF CT</b>2026</span></div>
+        <div class="film-progress"><i id="filmProgress"></i></div>
+      </div>
+
+      <div class="film-footer">
+        <p>Para pessoas reais. Para resultados reais.</p>
+        <button id="replayCampaign" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v5h5"/></svg>
+          Ver novamente
+        </button>
+      </div>
+    </section>
+
+    <!-- ===================== INTRO ===================== -->
+    <section class="intro" id="estrutura">
+      <div class="reveal">
+        <span class="section-num">01 / O CT</span>
+        <h2>UM LUGAR PARA<br />VOCÊ <em>CONTINUAR.</em></h2>
+      </div>
+      <div class="intro-copy reveal">
+        <p>Academia não precisa ser um ambiente intimidador. Na NutriFitness CT, você encontra estrutura, atenção e uma equipe presente para transformar esforço em progresso.</p>
+        <a class="plain" href="#contato">Quero conhecer o espaço
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===================== FEATURES ===================== -->
+    <section class="features" aria-label="Diferenciais da NutriFitness CT">
+      <article class="feature reveal">
+        <div class="feature-top"><span class="num">01</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 8v8M4 9.5v5M17 8v8M20 9.5v5M7 12h10"/><path d="M2.5 11v2M21.5 11v2"/></svg></div>
+        <h3>ESTRUTURA<br />COMPLETA</h3>
+        <p>Equipamentos e ambiente preparados para treinos seguros e eficientes.</p>
+      </article>
+      <article class="feature accent reveal">
+        <div class="feature-top"><span class="num">02</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M3 20v-1.5A4.5 4.5 0 0 1 7.5 14h3A4.5 4.5 0 0 1 15 18.5V20"/><path d="m16 10 2 2 4-5"/></svg></div>
+        <h3>EQUIPE<br />PRESENTE</h3>
+        <p>Orientação próxima para você treinar melhor e seguir avançando.</p>
+      </article>
+      <article class="feature reveal">
+        <div class="feature-top"><span class="num">03</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 19 9 13l4 3 8-10"/><path d="M16 6h5v5"/><circle cx="9" cy="13" r="1.4"/><circle cx="13" cy="16" r="1.4"/></svg></div>
+        <h3>EVOLUÇÃO<br />REAL</h3>
+        <p>Metas possíveis, acompanhamento e constância sem fórmulas mágicas.</p>
+      </article>
+    </section>
+
+    <!-- ===================== METHOD ===================== -->
+    <section class="method" id="metodo">
+      <div class="method-visual reveal">
+        <div class="method-poster">
+          <span class="tag">NF / 02</span>
+          <strong>VOCÊ<br />CONSEGUE<br /><em>MAIS.</em></strong>
+          <div class="plus" aria-hidden="true">+</div>
+        </div>
+        <div class="method-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          <span>Movimento<br /><b>é saúde</b></span>
+        </div>
+      </div>
+      <div class="method-copy reveal">
+        <span class="section-num">02 / NOSSO MÉTODO</span>
+        <h2>O TREINO<br />COMEÇA EM <em>VOCÊ.</em></h2>
+        <p>Seu objetivo, sua experiência e sua rotina orientam o caminho. A gente acompanha de perto para que o treino faça sentido e caiba na vida real.</p>
+        <ol class="method-steps">
+          <li><span class="step-num">01</span><div><b>Entendemos seu momento</b><small>Objetivos, rotina e nível de experiência.</small></div></li>
+          <li><span class="step-num">02</span><div><b>Orientamos seu treino</b><small>Execução segura e progressão consciente.</small></div></li>
+          <li><span class="step-num">03</span><div><b>Acompanhamos a evolução</b><small>Presença para ajustar e seguir avançando.</small></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===================== MODALITIES ===================== -->
+    <section class="modalities" id="modalidades">
+      <div class="modalities-head reveal">
+        <div>
+          <span class="section-num">03 / MODALIDADES</span>
           <h2>ENCONTRE O SEU<br /><em>RITMO.</em></h2>
-          <p>Do primeiro treino a uma rotina de alta intensidade.</p>
         </div>
-        <div class="modality-list">
-          <article class="modality reveal"><span>01</span><div><i data-lucide="biceps-flexed"></i><h3>MUSCULAÇÃO</h3></div><p>Força, condicionamento e composição corporal.</p><i data-lucide="arrow-up-right"></i></article>
-          <article class="modality reveal"><span>02</span><div><i data-lucide="flame"></i><h3>FUNCIONAL</h3></div><p>Movimento, intensidade e capacidade física.</p><i data-lucide="arrow-up-right"></i></article>
-          <article class="modality reveal"><span>03</span><div><i data-lucide="person-standing"></i><h3>ACOMPANHAMENTO</h3></div><p>Orientação para treinar com mais confiança.</p><i data-lucide="arrow-up-right"></i></article>
+        <p>Do primeiro treino a uma rotina de alta intensidade.</p>
+      </div>
+      <div class="modality-list">
+        <article class="modality modality-strength reveal">
+          <img src="assets/nutrifitness-deadlift-woman.png" alt="Mulher realizando levantamento terra na musculação" loading="eager" decoding="async" />
+          <div class="modality-overlay" aria-hidden="true"></div>
+          <span class="num">01</span>
+          <div class="modality-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 8v8M4 9.5v5M17 8v8M20 9.5v5M7 12h10"/><path d="M2.5 11v2M21.5 11v2"/></svg><h3>MUSCULAÇÃO</h3></div>
+          <p>Força, condicionamento e composição corporal.</p>
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
+        </article>
+        <article class="modality modality-functional reveal">
+          <img src="assets/nutrifitness-functional-ropes.png" alt="Atleta realizando treino funcional com cordas" loading="eager" decoding="async" />
+          <div class="modality-overlay" aria-hidden="true"></div>
+          <span class="num">02</span>
+          <div class="modality-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9 7a3 3 0 1 1 6 0"/><path d="M7.5 9h9l2.5 9a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2Z"/><path d="M9 13h6"/></svg><h3>FUNCIONAL</h3></div>
+          <p>Movimento, intensidade e capacidade física.</p>
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
+        </article>
+        <article class="modality modality-coaching reveal">
+          <img src="assets/nutrifitness-coaching.png" alt="Treinador acompanhando uma aluna durante o exercício" loading="eager" decoding="async" />
+          <div class="modality-overlay" aria-hidden="true"></div>
+          <span class="num">03</span>
+          <div class="modality-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 4h8M9 2h6v4H9z"/><path d="M6 4H4v18h16V4h-2"/><path d="m8 14 2.5 2.5L16 11"/></svg><h3>ACOMPANHAMENTO</h3></div>
+          <p>Orientação para treinar com mais confiança.</p>
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== STATEMENT ===================== -->
+    <section class="statement">
+      <p class="reveal">SEM PRESSA.<br />SEM DESCULPA.<br /><em>SEM PARAR.</em></p>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="contact" id="contato">
+      <div class="contact-copy reveal">
+        <span class="section-num">04 / COMECE AGORA</span>
+        <h2>SEU PRÓXIMO<br />TREINO COMEÇA<br /><em>AQUI.</em></h2>
+        <p>Preencha seus dados e nossa equipe entra em contato para agendar sua experiência na NutriFitness CT.</p>
+        <div class="contact-stats">
+          <div><b>+500</b><span>Alunos ativos</span></div>
+          <div><b>7</b><span>Dias por semana</span></div>
+          <div><b>100%</b><span>Acompanhamento</span></div>
         </div>
-      </section>
+      </div>
+      <form class="lead-form reveal" id="leadForm">
+        <label>Seu nome<input type="text" name="nome" placeholder="Como podemos chamar você?" required /></label>
+        <label>WhatsApp<input type="tel" name="telefone" placeholder="(00) 00000-0000" required /></label>
+        <label>Seu objetivo
+          <select name="objetivo" required>
+            <option value="">Selecione uma opção</option>
+            <option>Ganhar massa muscular</option>
+            <option>Emagrecer</option>
+            <option>Melhorar o condicionamento</option>
+            <option>Começar uma vida mais ativa</option>
+          </select>
+        </label>
+        <button class="btn primary" type="submit">Agendar minha experiência
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+        <div class="form-message" role="status" aria-live="polite"></div>
+      </form>
+    </section>
+  </main>
 
-      <section class="statement">
-        <p class="reveal">SEM PRESSA.<br />SEM DESCULPA.<br /><em>SEM PARAR.</em></p>
-      </section>
+  <footer>
+    <div class="footer-brand">
+      <a class="logo" href="#inicio" aria-label="NutriFitness — voltar ao início">
+        <span class="logo-mark"><img src="assets/logo-icon-transparent.png" alt="" /></span>
+        <span class="logo-text">NUTRIFITNESS<small>CENTRO DE TREINAMENTO</small></span>
+      </a>
+      <p class="tag">Treino de verdade, para pessoas reais.</p>
+    </div>
+    <div class="footer-meta">
+      <nav class="foot-links" aria-label="Links do rodapé">
+        <a href="#" aria-label="Instagram da NutriFitness">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          Instagram
+        </a>
+        <a href="#contato">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4z"/><path d="m4 7 8 6 8-6"/></svg>
+          Contato
+        </a>
+      </nav>
+      <div class="footer-bottom">
+        <span class="copyright">© 2026 NutriFitness CT</span>
+        <span class="footer-credit">Desenvolvido por <strong>FJ SOLUÇÕES</strong></span>
+      </div>
+    </div>
+  </footer>
 
-      <section class="contact" id="contato">
-        <div class="contact-copy reveal">
-          <span class="section-number">04 / COMECE AGORA</span>
-          <h2>SEU PRÓXIMO<br />TREINO COMEÇA<br /><em>AQUI.</em></h2>
-          <p>Preencha seus dados e nossa equipe entra em contato para agendar sua experiência na NutriFitness CT.</p>
-        </div>
-        <form class="lead-form reveal" id="leadForm">
-          <label>Seu nome<input type="text" name="nome" placeholder="Como podemos chamar você?" required /></label>
-          <label>WhatsApp<input type="tel" name="telefone" placeholder="(00) 00000-0000" required /></label>
-          <label>Seu objetivo<select name="objetivo" required><option value="">Selecione uma opção</option><option>Ganhar massa muscular</option><option>Emagrecer</option><option>Melhorar o condicionamento</option><option>Começar uma vida mais ativa</option></select></label>
-          <button class="button primary" type="submit">Agendar minha experiência <i data-lucide="arrow-right"></i></button>
-          <div class="form-message" role="status" aria-live="polite"></div>
-        </form>
-      </section>
-    </main>
-
-    <footer>
-      <a class="logo" href="#inicio"><span class="logo-icon">NF</span><span class="logo-type">NUTRI<strong>FITNESS</strong><small>CENTRO DE TREINAMENTO</small></span></a>
-      <p>Treino de verdade, para pessoas reais.</p>
-      <div><a href="#">Instagram</a><a href="#contato">Contato</a><span>© 2026</span></div>
-    </footer>
-
-    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
-    <script src="script.js"></script>
-  </body>
+<script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
+<script src="script.js?v=6"></script>
+</body>
 </html>
