@@ -5,7 +5,6 @@
   const stagger = motion ? motion.stagger : (v) => v;
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* Fallback: if Motion or JS fails, make sure content is visible */
   document.querySelectorAll(".reveal").forEach(el => el.style.opacity = 1);
 
   function safeAnimate(target, keyframes, opts){
@@ -17,7 +16,6 @@
     try{ animate(target, keyframes, opts); }catch(e){ /* no-op */ }
   }
 
-  /* ---------------- TICKER build ---------------- */
   const words = ["TREINO DE VERDADE", "RESULTADO REAL", "SEM PRESSA", "SEM DESCULPA", "SEM PARAR", "CONSTÂNCIA VENCE"];
   const track = document.getElementById("tickerTrack");
   if(track){
@@ -25,7 +23,6 @@
     track.innerHTML = build() + build();
   }
 
-  /* ---------------- SHARD PARTICLES (shared by bumper + film brand cut) ---------------- */
   function buildShards(container, count, radius, altClass){
     if(!container) return;
     let html = "";
@@ -42,7 +39,6 @@
     container.innerHTML = html;
   }
 
-  /* ---------------- INTRO BUMPER (opening logo sting) ---------------- */
   const introBumper = document.getElementById("introBumper");
   buildShards(document.getElementById("bumperShards"), 14, 260, "bumper-shard");
 
@@ -61,7 +57,6 @@
     window.setTimeout(finishBumper, 1900);
   }
 
-  /* ---------------- HERO CINEMATIC OPEN ---------------- */
   function playHeroOpen(){
     const lbTop = document.getElementById("lbTop");
     const lbBottom = document.getElementById("lbBottom");
@@ -95,7 +90,6 @@
       animate(path, { opacity: [1,.35,1] }, { duration: 1.1, easing: "ease-in-out" });
     }, 1200);
   }
-  /* ---------------- SCROLL REVEALS ---------------- */
   const io = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if(!entry.isIntersecting) return;
@@ -114,7 +108,6 @@
     el.style.transitionDelay = "";
   });
 
-  /* expanding modality cards */
   if(hover && animate){
     hover(".modality", (element) => {
       const cards = [...element.parentElement.querySelectorAll(".modality")];
@@ -139,7 +132,6 @@
     });
   }
 
-  /* stagger features */
   const featureIO = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if(!entry.isIntersecting) return;
@@ -147,7 +139,6 @@
     });
   }, { threshold: .2 });
 
-  /* ---------------- CAMPAIGN FILM ---------------- */
   const stage = document.getElementById("filmStage");
   const replay = document.getElementById("replayCampaign");
   let hasPlayed = false, playing = false;
@@ -195,7 +186,6 @@
       animate(barBottom, { height: ["0px","44px"] }, { duration: .5, easing: [0.76,0,0.24,1] });
     }
 
-    /* shot 1 — action footage */
     animate("#athleteScene", { scale: [1.13, 1.02], x: [32, 0] }, { duration: 3.2, easing: "ease-out" });
     animate("#athleteScene", { opacity:[1,.18] }, { duration:.55, delay:2.35, easing:"ease-in-out" });
     animate("#athleteSceneSecondary", { opacity:[0,1], scale:[1.12,1.02], x:[-28,0] }, { duration:2.15, delay:2.35, easing:[.16,1,.3,1] });
@@ -210,7 +200,6 @@
     animate(".film-lead", { opacity: [0,1], y: [22,0] }, { duration: .65, delay: 1.35 });
     animate(".film-actions > *, .film-stamp", { opacity: [0,1], y: [20,0] }, { duration: .6, delay: stagger(.1, { startDelay: 1.55 }) });
 
-    /* shot 2 — hard cut to brand reveal */
     animate(".film-copy, .film-topline, .film-stamp", { opacity:[1,0], x:[0,-28] }, { duration:.42, delay:4.05, easing:"ease-in" });
     animate("#athleteSceneSecondary", { opacity: [1, .1], scale:[1.02,1.08] }, { duration: .5, delay: 4.25, easing: "ease-in" });
     animate("#filmSceneBrand", { opacity: [0,1] }, { duration: .5, delay: 4.35, easing: [0.22,1,0.36,1] });
@@ -235,7 +224,6 @@
   }
   replay?.addEventListener("click", () => { hasPlayed = false; playCampaign(); });
 
-  /* ---------------- MOBILE MENU ---------------- */
   const menuToggle = document.getElementById("menuToggle");
   menuToggle?.addEventListener("click", () => {
     const nav = document.querySelector(".main-nav");
@@ -244,7 +232,6 @@
     nav.style.cssText = open ? "" : "display:flex;position:fixed;top:70px;left:20px;right:20px;flex-direction:column;background:#131313;border:1px solid rgba(247,245,240,.1);padding:20px;gap:18px;z-index:99;border-radius:4px;";
   });
 
-  /* ---------------- FORM ---------------- */
   const form = document.getElementById("leadForm");
   form?.addEventListener("submit", (e) => {
     e.preventDefault();
