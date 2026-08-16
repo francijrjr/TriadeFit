@@ -181,9 +181,10 @@
     const barTop = document.getElementById("filmBarTop");
     const barBottom = document.getElementById("filmBarBottom");
     if(barTop && barBottom){
+      const barHeight = window.matchMedia("(max-width: 600px)").matches ? "22px" : "44px";
       barTop.style.height = "0px"; barBottom.style.height = "0px";
-      animate(barTop, { height: ["0px","44px"] }, { duration: .5, easing: [0.76,0,0.24,1] });
-      animate(barBottom, { height: ["0px","44px"] }, { duration: .5, easing: [0.76,0,0.24,1] });
+      animate(barTop, { height: ["0px",barHeight] }, { duration: .5, easing: [0.76,0,0.24,1] });
+      animate(barBottom, { height: ["0px",barHeight] }, { duration: .5, easing: [0.76,0,0.24,1] });
     }
 
     animate("#athleteScene", { scale: [1.13, 1.02], x: [32, 0] }, { duration: 3.2, easing: "ease-out" });

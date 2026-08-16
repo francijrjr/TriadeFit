@@ -2032,6 +2032,127 @@ footer p.tag {
   .hero {
     padding-top: 120px;
   }
+  .film {
+    padding-top: 84px;
+    padding-bottom: 54px;
+  }
+  .film-head {
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+  .film-head .eyebrow {
+    max-width: 260px;
+    font-size: 10.5px;
+    line-height: 1.45;
+  }
+  .film-head h2 {
+    font-size: clamp(40px, 12vw, 52px);
+  }
+  .film-head .section-num {
+    width: 100%;
+    font-size: 11px;
+  }
+  .film-stage {
+    width: 100%;
+    height: clamp(520px, 145vw, 580px);
+    aspect-ratio: auto;
+    border-radius: 2px;
+  }
+  .film-athlete {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-position: center 20%;
+  }
+  .film-athlete.secondary {
+    object-position: 58% center;
+  }
+  .film-scene::before {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.14) 0%,
+      rgba(0, 0, 0, 0.18) 34%,
+      rgba(0, 0, 0, 0.7) 67%,
+      rgba(16, 0, 2, 0.96) 100%
+    );
+  }
+  .film-vignette {
+    background: radial-gradient(
+      ellipse 115% 88% at 50% 28%,
+      transparent 34%,
+      rgba(0, 0, 0, 0.78) 100%
+    );
+  }
+  .film-topline {
+    top: 18px;
+    left: 18px;
+    right: 18px;
+  }
+  .film-topline span {
+    font-size: 9px;
+    letter-spacing: 0.12em;
+  }
+  .film-topline span:last-child {
+    display: none;
+  }
+  .film-copy {
+    left: 20px;
+    right: 20px;
+    bottom: 38px;
+    max-width: none;
+  }
+  .film-kicker {
+    font-size: 11px;
+    line-height: 1.35;
+  }
+  .film-copy h2 {
+    margin: 8px 0 12px;
+    font-size: clamp(46px, 15vw, 60px);
+    line-height: 0.86;
+  }
+  .film-lead {
+    max-width: 310px;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .film-actions {
+    align-items: stretch;
+    gap: 12px;
+    margin-top: 18px;
+  }
+  .film-actions .btn {
+    width: 100%;
+    justify-content: space-between;
+    padding: 14px 16px;
+    font-size: 13px;
+  }
+  .film-proof {
+    font-size: 10px;
+  }
+  .film-stamp {
+    display: none;
+  }
+  .film-logo {
+    width: min(560px, 88vw);
+    max-height: 68%;
+    object-fit: contain;
+  }
+  .film-footer {
+    align-items: flex-start;
+    gap: 16px;
+    margin-top: 16px;
+  }
+  .film-footer p {
+    max-width: 170px;
+    font-size: 11.5px;
+    line-height: 1.45;
+  }
+  .film-footer button {
+    flex-shrink: 0;
+    padding: 10px 12px;
+    font-size: 10px;
+  }
   .modality-list {
     flex-direction: column;
     min-height: 0;
