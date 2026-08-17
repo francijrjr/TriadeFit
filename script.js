@@ -1,4 +1,5 @@
-const WHATSAPP_NUMBER = "88 9 21745890";
+
+const WHATSAPP_NUMBER = "75588921745890";
 
 const whatsappMessage = encodeURIComponent(
   "Olá, Francinilton! Vi seu portfólio e gostaria de conversar sobre um projeto."
@@ -22,8 +23,10 @@ document.querySelectorAll("[data-whatsapp]").forEach((link) => {
 const yearEl = document.querySelector("[data-year]");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+// Lucide icons
 if (window.lucide) window.lucide.createIcons();
 
+// Mobile tab-bar menu
 const menuButton = document.querySelector(".menu-toggle");
 const menu = document.querySelector("#menu");
 
@@ -48,6 +51,62 @@ document.querySelectorAll(".project").forEach((project) => {
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+// Typewriter loop for the skills line under the brand prompt
+function initSkillsTyper() {
+  const el = document.querySelector(".skills-typed");
+  if (!el) return;
+
+  const skills = (el.dataset.skills || "")
+    .split(",")
+    .map((s) => s.trim())
+    .filter(Boolean);
+  if (!skills.length) return;
+
+  if (prefersReducedMotion) {
+    el.textContent = skills[0];
+    return;
+  }
+
+  const TYPE_SPEED = 85;
+  const DELETE_SPEED = 40;
+  const HOLD_TIME = 1400;
+  const NEXT_DELAY = 300;
+
+  let skillIndex = 0;
+  let charIndex = 0;
+  let deleting = false;
+
+  function tick() {
+    const current = skills[skillIndex];
+
+    if (!deleting) {
+      charIndex += 1;
+      el.textContent = current.slice(0, charIndex);
+      if (charIndex === current.length) {
+        deleting = true;
+        setTimeout(tick, HOLD_TIME);
+        return;
+      }
+      setTimeout(tick, TYPE_SPEED);
+    } else {
+      charIndex -= 1;
+      el.textContent = current.slice(0, charIndex);
+      if (charIndex === 0) {
+        deleting = false;
+        skillIndex = (skillIndex + 1) % skills.length;
+        setTimeout(tick, NEXT_DELAY);
+        return;
+      }
+      setTimeout(tick, DELETE_SPEED);
+    }
+  }
+
+  tick();
+}
+
+initSkillsTyper();
+
+// Terminal "typed" prompt in the hero
 function typeText(el) {
   const text = el.dataset.typed || "";
   if (!text) return;
@@ -64,6 +123,7 @@ function typeText(el) {
   }, 90);
 }
 
+// Motion (motion.dev) powers scroll reveals + micro-interactions
 async function initMotion() {
   if (prefersReducedMotion) {
     document.querySelectorAll(".reveal").forEach((el) => el.classList.add("visible"));
