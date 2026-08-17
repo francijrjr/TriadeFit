@@ -1,5 +1,5 @@
 
-const WHATSAPP_NUMBER = "75588921745890";
+const WHATSAPP_NUMBER = "5588921745890";
 
 const whatsappMessage = encodeURIComponent(
   "Olá, Francinilton! Vi seu portfólio e gostaria de conversar sobre um projeto."
